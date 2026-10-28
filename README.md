@@ -68,6 +68,20 @@ while (read_iq(in, 4096) > 0) {
 sdr_fm_destroy(&fm);
 ```
 
+## Example output
+
+Demodulated audio from the synthetic generator (`make demo`): a 1 kHz tone
+recovered from FM with 25 kHz deviation, 2.4 MS/s in and 48 kHz out.
+
+![Demodulated 1 kHz tone](docs/demo_waveform.png)
+
+## Next steps
+
+- Feed the demodulator from a real RTL-SDR capture and compare against a
+  reference receiver.
+- Move the NCO, FIR and discriminator chain onto a Zynq-7000 (programmable
+  logic) for real-time operation.
+
 ## Pipeline
 
 Default configuration (2.4 MS/s in, 48 kHz audio out):
